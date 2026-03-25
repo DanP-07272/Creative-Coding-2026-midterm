@@ -61,7 +61,11 @@ function draw() {
         other.yVel *= -1;
       }
     }
-
+    textSize(32);
+  fill(255);
+  stroke(0);
+  strokeWeight(4);
+  text('DANIEL PARK', width/2, 50);
     image(s.img, s.x, s.y, s.size, s.size);
   }
 }
