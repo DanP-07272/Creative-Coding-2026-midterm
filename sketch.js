@@ -1,10 +1,17 @@
 let squares = [];
 
+let imgs = [];
 let links = [
   "Daniel_sketch1.html",
   "Daniel_sketch2.html",
   "Daniel_sketch3.html"
 ];
+
+function preload() {
+  imgs[0] = loadImage("sketch1.png");
+  imgs[1] = loadImage("sketch2.png");
+  imgs[2] = loadImage("sketch3.png");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -16,14 +23,14 @@ function setup() {
       size: 200,
       xVel: random(-15, 15),
       yVel: random(-15, 15),
-      col: color(random(255), random(255), random(255)),
+      img: imgs[i],
       link: links[i]
     });
   }
 }
 
 function draw() {
-  background(128, 0, 128); 
+  background(220);
 
   for (let i = 0; i < squares.length; i++) {
     let s = squares[i];
@@ -47,6 +54,7 @@ function draw() {
         s.y < other.y + other.size &&
         s.y + s.size > other.y
       ) {
+
         s.xVel *= -1;
         s.yVel *= -1;
         other.xVel *= -1;
@@ -54,8 +62,7 @@ function draw() {
       }
     }
 
-    fill(s.col);
-    rect(s.x, s.y, s.size, s.size);
+    image(s.img, s.x, s.y, s.size, s.size);
   }
 }
 
