@@ -14,8 +14,8 @@ function setup() {
       x: random(200, width - 200),
       y: random(200, height - 200),
       size: 200,
-      xVel: random(-5, 5),
-      yVel: random(-5, 5),
+      xVel: random(-10, 10),
+      yVel: random(-10, 10),
       col: color(random(255), random(255), random(255)),
       link: links[i]
     });
